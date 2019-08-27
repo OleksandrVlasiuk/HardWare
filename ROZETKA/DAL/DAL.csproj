@@ -53,21 +53,12 @@
     <Compile Include="Entities\Images.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductAccess.cs" />
-    <Compile Include="Migrations\201908271721059_CreatingDatabase.cs" />
-    <Compile Include="Migrations\201908271721059_CreatingDatabase.Designer.cs">
-      <DependentUpon>201908271721059_CreatingDatabase.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908271721059_CreatingDatabase.resx">
-      <DependentUpon>201908271721059_CreatingDatabase.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

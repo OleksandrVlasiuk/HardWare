@@ -19,7 +19,7 @@ namespace ROZETKA.Entities
         public int Price { get; set; }
         [Required,StringLength(100)]
         public string Name { get; set; }
-        [Required,ForeignKey("CategoriesOf")]
+        [ForeignKey("CategoriesOf")]
         public int Categories_id { get; set; }
         [Required]
         public string Description { get; set; }
