@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL.Abstract;
+using BLL.Concrate;
+using DAL.Concrate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,17 @@ namespace ROZETKA
         public MainWindow()
         {
             InitializeComponent();
+            ProductRepository pt = new ProductRepository();
+            IProductService productService = new ProductService(pt);
+
+
+
+            CategoryRepository ct = new CategoryRepository();
+            ICategoryService categoryService = new CategoryService(ct);
+            var data= categoryService.GetCategories();
+
+            DataGridCategories.ItemsSource = data;
+
         }
     }
 }

@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ROZETKA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="459.712" Width="800">
+    <Grid Background="#FFEAEAEA">
+        <ListView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF1F1D1D"/>
+        <DataGrid x:Name="DataGridCategories" HeadersVisibility="None" HorizontalAlignment="Left" Height="335" Margin="10,58,0,0" VerticalAlignment="Top" Width="130" Background="#FF555D0D" BorderBrush="{x:Null}" Foreground="White" RowBackground="#FF555D0D" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}"/>
+        <ListView HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="lvItems" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel  Width="{Binding ActualWidth,ElementName=lvItems}"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Background="#151617">
+                        <Image MaxWidth="200"
+                       Source="{Binding Image}" />
+                        <TextBlock Text="{Binding Text}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <DataGrid Height="223" Width="30"/>
+            <DataGrid Height="74" Width="85"/>
+            <ListView Height="67" Width="129">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListView Height="150" Width="247">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ListView>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="415"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="34" Margin="602,58,0,0" VerticalAlignment="Top" Width="74"/>
+
     </Grid>
 </Window>
