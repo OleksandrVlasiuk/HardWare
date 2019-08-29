@@ -24,7 +24,7 @@ namespace ROZETKA.Entities
         [Required]
         public string Description { get; set; }
         public virtual ProductAccess ProductAccessOf { get; set; }
-        public virtual ICollection<Images> Images { get; set; }
+        public virtual Images ImagesOf { get; set; }
         public virtual Categories CategoriesOf { get; set; }
     }
 }

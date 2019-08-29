@@ -8,41 +8,25 @@
         Title="MainWindow" Height="459.712" Width="800">
     <Grid Background="#FFEAEAEA">
         <ListView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF1F1D1D"/>
-        <DataGrid x:Name="DataGridCategories" HeadersVisibility="None" HorizontalAlignment="Left" Height="335" Margin="10,58,0,0" VerticalAlignment="Top" Width="130" Background="#FF555D0D" BorderBrush="{x:Null}" Foreground="White" RowBackground="#FF555D0D" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}"/>
-        <ListView HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="lvItems" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
+        <DataGrid x:Name="DataGridCategories" HeadersVisibility="None" HorizontalAlignment="Left" Height="335" Margin="10,58,0,0" VerticalAlignment="Top" Width="147" Background="#FF555D0D" BorderBrush="{x:Null}" Foreground="White" RowBackground="#FF555D0D" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}"/>
+        <ListView HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="DataGridProducts" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel  Width="{Binding ActualWidth,ElementName=lvItems}"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
-            <ListView.ItemTemplate >
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="#151617">
+                    <StackPanel Background="Transparent">
                         <Image MaxWidth="200"
-                       Source="{Binding Image}" />
-                        <TextBlock Text="{Binding Text}" />
+                       Source="{Binding Images.ImageF}" />
+                        <TextBlock Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <DataGrid Height="223" Width="30"/>
-            <DataGrid Height="74" Width="85"/>
-            <ListView Height="67" Width="129">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <ListView Height="150" Width="247">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
         </ListView>
         <TextBox HorizontalAlignment="Left" Height="34" Margin="162,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="415"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="34" Margin="602,58,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Height="34" Margin="582,58,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.486,0.397" Background="#FF615757" Foreground="White"/>
 
     </Grid>
 </Window>

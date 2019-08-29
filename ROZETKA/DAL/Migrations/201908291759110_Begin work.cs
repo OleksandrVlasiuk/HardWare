@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Start : DbMigration
+    public partial class Beginwork : DbMigration
     {
         public override void Up()
         {
@@ -34,15 +34,14 @@ namespace DAL.Migrations
                 "tbl.Images",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        ProductId = c.Int(nullable: false),
+                        Id = c.Int(nullable: false),
                         ImageF = c.String(nullable: false),
-                        ImageS = c.String(),
-                        ImageT = c.String(),
+                        ImageS = c.String(nullable: false),
+                        ImageT = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("tbl.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId);
+                .ForeignKey("tbl.Products", t => t.Id)
+                .Index(t => t.Id);
             
             CreateTable(
                 "tbl.ProductAccesses",
@@ -60,10 +59,10 @@ namespace DAL.Migrations
         public override void Down()
         {
             DropForeignKey("tbl.ProductAccesses", "Id", "tbl.Products");
-            DropForeignKey("tbl.Images", "ProductId", "tbl.Products");
+            DropForeignKey("tbl.Images", "Id", "tbl.Products");
             DropForeignKey("tbl.Products", "Categories_id", "tbl.Categories");
             DropIndex("tbl.ProductAccesses", new[] { "Id" });
-            DropIndex("tbl.Images", new[] { "ProductId" });
+            DropIndex("tbl.Images", new[] { "Id" });
             DropIndex("tbl.Products", new[] { "Categories_id" });
             DropTable("tbl.ProductAccesses");
             DropTable("tbl.Images");

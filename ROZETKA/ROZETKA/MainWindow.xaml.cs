@@ -28,15 +28,16 @@ namespace ROZETKA
             InitializeComponent();
             ProductRepository pt = new ProductRepository();
             IProductService productService = new ProductService(pt);
-
-
+            var products = productService.GetAll();
+            DataGridProducts.ItemsSource = products;
 
             CategoryRepository ct = new CategoryRepository();
             ICategoryService categoryService = new CategoryService(ct);
             var data= categoryService.GetCategories();
-
             DataGridCategories.ItemsSource = data;
 
         }
+
+
     }
 }

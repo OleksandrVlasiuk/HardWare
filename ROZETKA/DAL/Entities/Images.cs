@@ -12,18 +12,15 @@ namespace UserCompressImage.Entities
     [Table("tbl.Images")]
     public class Images
     {
-        [Key]
+        [Key, ForeignKey("ProductOf")]
         public int Id { get; set; }
-
-        [ForeignKey("ProductOf")]
-        public int ProductId { get; set; }
         [Required]
         public string ImageF { get; set; }
-
+        [Required]
         public string ImageS { get; set; }
-
+        [Required]
         public string ImageT { get; set; }
-
+        [Required]
         public virtual Product ProductOf { get; set; }
     }
 }

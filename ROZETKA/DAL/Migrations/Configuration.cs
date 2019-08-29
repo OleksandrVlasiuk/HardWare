@@ -71,15 +71,14 @@ namespace DAL.Migrations
                 Images images = new Images()
                 {
                     Id = i + 1,
-                    ImageF = $"../ImageF{i+1}.jpg",
-                    ImageS = $"../ImageS{i+1}.jpg",
-                    ImageT = $"../ImageT{i+1}.jpg",
-                    ProductId= i+1
+                    ImageF = $"../../Images/ImageF{i + 1}.jpg",
+                    ImageS = $"../../Images/ImageS{i + 1}.jpg",
+                    ImageT = $"../../Images/ImageT{i + 1}.jpg",
                 };
                 context.Images.AddOrUpdate(t => t.Id, images);
             }
 
-           
+
 
         }
     }
