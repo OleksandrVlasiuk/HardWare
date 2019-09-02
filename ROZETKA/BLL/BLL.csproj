@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,10 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IImagesService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Concrate\CategoryService.cs" />
+    <Compile Include="Concrate\ImagesService.cs" />
     <Compile Include="Concrate\ProductService.cs" />
     <Compile Include="Models\CategoryDTO.cs" />
+    <Compile Include="Models\ImagesDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="459.712" Width="800">
     <Grid Background="#FFEAEAEA">
+        <Image Name="img" />
         <ListView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF1F1D1D"/>
         <DataGrid x:Name="DataGridCategories" HeadersVisibility="None" HorizontalAlignment="Left" Height="335" Margin="10,58,0,0" VerticalAlignment="Top" Width="147" Background="#FF555D0D" BorderBrush="{x:Null}" Foreground="White" RowBackground="#FF555D0D" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}"/>
         <ListView HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="DataGridProducts" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
@@ -17,16 +18,16 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="Transparent">
-                        <Image MaxWidth="200"
-                       Source="{Binding Images.ImageF}" />
-                        <TextBlock Text="{Binding Name}" />
+                    <StackPanel Background="White">
+                        <Image Width="100" Height="100"
+                       Source="{Binding Path=ImageF}" />
+                        <TextBlock Foreground="Black" Text="{Binding Name}" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="162,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="415"/>
-        <Button Content="Ok" HorizontalAlignment="Left" Height="34" Margin="582,58,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.486,0.397" Background="#FF615757" Foreground="White"/>
+        <TextBox Name="Search"  HorizontalAlignment="Left" Height="34" Margin="162,58,0,0" TextWrapping="Wrap" Text="Searching" VerticalAlignment="Top" Width="415" MouseDoubleClick="TextBox_MouseClick"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Height="34" Margin="582,58,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.486,0.397" Background="#FF615757" Foreground="White" Click="Button_Click"/>
 
     </Grid>
 </Window>
