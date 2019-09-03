@@ -8,9 +8,11 @@
         Title="MainWindow" Height="459.712" Width="800">
     <Grid Background="#FFEAEAEA">
         <Image Name="img" />
-        <ListView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF1F1D1D"/>
+        <ListView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF1F1D1D">
+            <Button Content="Basket" Height="38" Width="397" FontSize="24" FontFamily="Tahoma" Foreground="White" Background="#FF939300"/>
+        </ListView>
         <DataGrid x:Name="DataGridCategories" HeadersVisibility="None" HorizontalAlignment="Left" Height="335" Margin="10,58,0,0" VerticalAlignment="Top" Width="147" Background="#FF555D0D" BorderBrush="{x:Null}" Foreground="White" RowBackground="#FF555D0D" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}"/>
-        <ListView HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="DataGridProducts" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
+        <ListView SelectionChanged="DataGridProducts_SelectionChanged" HorizontalAlignment="Left" Height="296" Margin="162,97,0,0" VerticalAlignment="Top" Width="591" Name="DataGridProducts" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Foreground="White" Background="#FF2E2E2E" BorderBrush="{x:Null}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel  Width="{Binding ActualWidth,ElementName=lvItems}"/>
@@ -28,6 +30,7 @@
         </ListView>
         <TextBox Name="Search"  HorizontalAlignment="Left" Height="34" Margin="162,58,0,0" TextWrapping="Wrap" Text="Searching" VerticalAlignment="Top" Width="415" MouseDoubleClick="TextBox_MouseClick"/>
         <Button Content="Ok" HorizontalAlignment="Left" Height="34" Margin="582,58,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.486,0.397" Background="#FF615757" Foreground="White" Click="Button_Click"/>
+        <Button Content="User" HorizontalAlignment="Left" Height="40" Margin="402,0,0,0" VerticalAlignment="Top" Width="390" FontFamily="Tahoma" FontSize="24" Foreground="White" Background="#FFCDCD00"/>
 
     </Grid>
 </Window>
