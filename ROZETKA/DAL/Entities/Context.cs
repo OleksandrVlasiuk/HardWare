@@ -16,5 +16,6 @@ namespace ROZETKA.Entities
         public DbSet<Images> Images { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductAccess> ProductAccesses { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

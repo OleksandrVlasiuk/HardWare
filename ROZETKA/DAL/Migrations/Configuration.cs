@@ -3,9 +3,7 @@ namespace DAL.Migrations
     using DAL.Entities;
     using ROZETKA.Entities;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
     using UserCompressImage.Entities;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ROZETKA.Entities.EFContext>
